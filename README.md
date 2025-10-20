@@ -1,13 +1,13 @@
 📄 AI Job Recommender App
 
-This project is an AI-powered Job Recommendation System built with Streamlit. It analyzes your uploaded resume (PDF), summarizes your profile, identifies skill gaps, provides a career roadmap, and recommends relevant jobs from LinkedIn and Naukri — all powered by **OpenAI GPT-OSS-20B**, with **job scraping via Apify** and **automation using MCP**.
+This project is an AI-powered Job Recommendation System built with Streamlit. It analyzes your uploaded resume (PDF), summarizes your profile, identifies skill gaps, provides a career roadmap, and recommends relevant jobs from LinkedIn and Naukri — all powered by **Groq AI using the `openai/gpt-oss-20b` model**, with **job scraping via Apify** and **automation using MCP**.
 
 ---
 
 🚀 Features
 
 * Upload a PDF resume.
-* Extract and summarize experience, education, and skills using GPT-OSS-20B.
+* Extract and summarize experience, education, and skills using `openai/gpt-oss-20b` via Groq.
 * Detect missing skills or certifications (skill gap analysis).
 * Generate a personalized career roadmap.
 * Extract job search keywords from resume summary.
@@ -20,7 +20,7 @@ This project is an AI-powered Job Recommendation System built with Streamlit. It
 
 * **Frontend:** Streamlit
 * **Backend:** Python
-* **AI Model:** OpenAI GPT-OSS-20B
+* **AI Model:** `openai/gpt-oss-20b` via Groq
 * **Automation & Scraping:** MCP, Apify
 * **Libraries:**
 
@@ -29,7 +29,6 @@ This project is an AI-powered Job Recommendation System built with Streamlit. It
   * `streamlit`
   * `pymupdf`
   * `python-dotenv`
-  * `requests`
 
 ---
 
@@ -61,7 +60,7 @@ pip install -r requirements.txt
 4. Add your API keys in `.env`:
 
 ```
-OPENAI_API_KEY=your_openai_api_key_here
+GROQ_API_KEY=your_groq_api_key_here
 APIFY_API_KEY=your_apify_api_key_here
 ```
 
@@ -83,7 +82,7 @@ Then open the URL displayed in the terminal (usually [http://localhost:8501](htt
 
 1. Upload your resume (PDF).
 2. Extract text using **PyMuPDF (`fitz`)**.
-3. **GPT-OSS-20B** summarizes the resume, identifies skill gaps, and generates a career roadmap.
+3. **GPT-OSS-20B via Groq** summarizes the resume, identifies skill gaps, and generates a career roadmap.
 4. Job keywords are extracted from the summary.
 5. **Apify** or **MCP automation** fetches jobs from LinkedIn and Naukri.
 6. Streamlit displays the results with **loading spinners** for a smooth UX.
